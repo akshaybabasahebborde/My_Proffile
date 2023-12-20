@@ -11,8 +11,8 @@
             color: #333;
             margin: 20px;
             text-align: center;
-            opacity: 0; /* Set initial opacity to 0 for animation */
-            animation: fadeIn 1s ease-in-out forwards; /* Animation to fade in */
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
         }
 
         @keyframes fadeIn {
@@ -33,7 +33,18 @@
             border-radius: 50%;
             max-width: 200px;
             border: 5px solid #4CAF50;
-            animation: heartbeat 1s infinite; /* Animation for heartbeat effect */
+            animation: heartbeat 1s infinite;
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .left-image, .right-image {
+            width: 48%;
+            border-radius: 10px;
         }
 
         .info-container {
@@ -55,12 +66,21 @@
                 width: 100%;
                 max-width: none;
             }
+            .left-image, .right-image {
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
     <h2>Stylish Animated Marriage Biodata</h2>
+
+    <div class="images-container">
+        <img src="shivaji.jpg" alt="Shivaji Maharaj" class="left-image">
+        <img src="ganpati.jpg" alt="Ganpati" class="right-image">
+    </div>
 
     <img src="your-image.jpg" alt="Profile Image" class="profile-image">
 
