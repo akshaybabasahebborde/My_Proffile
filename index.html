@@ -49,19 +49,30 @@
             animation: heartbeat 1s infinite;
         }
 
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
         .info-container {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Light white background with some transparency */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 20px auto;
             max-width: 600px;
+            position: relative;
+            overflow: hidden; /* Hide overflowing raindrops */
         }
 
         p {
             font-size: 18px;
             line-height: 1.6;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
 
         video {
@@ -81,17 +92,48 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background: red;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 75%, 25% 100%, 0% 35%);
             transform: rotate(-45deg);
             animation: heartBeat 1s infinite;
+            top: 10px;
+            right: 10px;
         }
-
+<body>
+  <h1>
+        <span class="text">A</span>
+        <span class="text">k</span>
+        <span class="text">s</span>
+        <span class="text">h</span>
+        <span class="text">a</span>
+        <span class="text">y</span>
+    </h1>
+    </body>
         @keyframes heartBeat {
             0%, 100% {
                 transform: scale(1);
             }
             50% {
                 transform: scale(1.3);
+            }
+        }
+
+        /* Raindrop Animation */
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background-color: blue; /* Color of the raindrop */
+            animation: raindropFall 2s linear infinite;
+            opacity: 0.5; /* Opacity of the raindrop */
+        }
+
+        @keyframes raindropFall {
+            0% {
+                transform: translateY(-50px) rotate(45deg);
+            }
+            100% {
+                transform: translateY(400px) rotate(45deg);
             }
         }
 
@@ -119,33 +161,35 @@
     <video id="video" autoplay></video>
 
     <img id="capturedImage" alt="Captured Image" class="profile-image">
-    
-    <!-- Heart Animation -->
-    <div class="heart"></div>
 
-    <!-- First set of information -->
+    <!-- Raindrop Background -->
     <div class="info-container">
+        <!-- Raindrops -->
+        <div class="raindrop" style="left: 10px;"></div>
+        <div class="raindrop" style="left: 30px;"></div>
+        <div class="raindrop" style="left: 50px;"></div>
+        <!-- Add more raindrops as needed -->
+
         <p>
-            <strong>Name:</strong> Your Name<br>
-            <strong>Age:</strong> Your Age<br>
-            <strong>Gender:</strong> Your Gender<br>
-            <strong>Occupation:</strong> Your Occupation<br>
-            <strong>Education:</strong> Your Education<br>
-            <strong>About Me:</strong> Your About Me text<br>
-            <strong>Expectations:</strong> Your Expectations text<br>
+            <strong>Name:</strong> Akshay<br>
+            <strong>Age:</strong> 25<br>
+            <strong>BirthDate:</strong> 15/01/1999<br>
+            <strong>Gender:</strong> Male<br>
+            <strong>Occupation:</strong> Royal_Shetkari<br>
+            <strong>Education:</strong> Royal Mechanical<br>
+            <strong>About Me:</strong> I believe in mutual respect and open communication in a marriage. I am looking for an honest, caring partner with similar values. I value family traditions and am excited to start my family with someone special. I enjoy reading books, trying out new recipes, and exploring new places in my free time.<br>
+            <strong>Expectations:</strong> Minimum 15 lakh package per annum<br>
         </p>
     </div>
+
+    <!-- Heart Animation -->
+    <div class="heart"></div>
 
     <!-- Biodata Matching URL -->
     <p>
         <strong>Biodata Matching:</strong>
-        <a href="https://example.com/biodata-matching" target="_blank">Click here for biodata matching</a>
+        <a href="https://www.astroyogi.com/kundli/kundli-matching" target="_blank">Click here for biodata matching</a>
     </p>
-
-    <audio controls>
-        <source src="your-audio.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
 
     <!-- Image Link Section -->
     <div id="imageLink">
